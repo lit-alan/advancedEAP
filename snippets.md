@@ -9,7 +9,7 @@
 ``` 
         
 # Web.xml#
-
+```
 <servlet>
         <servlet-name>dispatcher</servlet-name>
         <servlet-class>
@@ -26,9 +26,10 @@
         <url-pattern>/</url-pattern>
     </servlet-mapping>
     
-    
-     #sd4-config.xml#
-    
+ ```
+
+#sd4-config.xml#
+```
     <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:context="http://www.springframework.org/schema/context"
     xmlns:mvc="http://www.springframework.org/schema/mvc"
@@ -48,3 +49,10 @@
         </property>
     </bean>  
 </beans>
+```
+
+#JSTL Import#
+
+```
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+```
