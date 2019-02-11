@@ -1,3 +1,4 @@
+# Useful code snippets for 12/02/2019 # :heart_eyes:
 # Spring Maven Dependency #
 ```
  <dependency>
@@ -8,7 +9,7 @@
 
 ``` 
         
-# web.xml #
+# Web.xml #
 ```
 <servlet>
         <servlet-name>dispatcher</servlet-name>
