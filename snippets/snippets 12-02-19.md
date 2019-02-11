@@ -9,7 +9,7 @@
 
 ``` 
      
-### web.xml ##
+## web.xml ##
 ```
 <servlet>
         <servlet-name>dispatcher</servlet-name>
