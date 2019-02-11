@@ -1,5 +1,5 @@
-# Useful code snippets for 12/02/2019  :heart_eyes:
-# Spring Maven Dependency #
+# Useful code snippets for 12/02/2019 # :heart_eyes:
+## Spring Maven Dependency ##
 ```
  <dependency>
   <groupId>org.springframework</groupId>
@@ -8,8 +8,8 @@
 </dependency>
 
 ``` 
-        
-# web.xml #
+     
+### Web.xml ##
 ```
 <servlet>
         <servlet-name>dispatcher</servlet-name>
@@ -29,7 +29,7 @@
     
  ```
 
-# sd4-config.xml #
+## sd4-config.xml ##
 ```
     <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:context="http://www.springframework.org/schema/context"
@@ -52,7 +52,7 @@
 </beans>
 ```
 
-# JSTL Import for JSP #
+## JSTL Import for JSP ##
 
 ```
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
