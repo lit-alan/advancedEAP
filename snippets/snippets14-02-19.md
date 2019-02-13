@@ -177,6 +177,51 @@ public ModelAndView deleteAnAgent(@QueryParam("id") int id) {
 }
 ```    
 
+## Revised form to add an agent (this form uses the Spring tag library)
+```
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+  
+        <h3>Enter The Agent Details!</h3>
+        
+        <form:form method="POST" action="/AgentsCRUD/addAgent" modelAttribute="agent">
+     
+            <table>
+                <tr>
+                    <td><form:label path="id">ID</form:label></td>
+                    <td><form:input path="id" required='true'/></td> 
+               </tr>
+                <tr>
+                    <td><form:label path="name">Name</form:label></td>
+                    <td><form:input path="name"/></td>
+                    <form:errors path="name"/>
+                </tr>
+                <tr>
+                    <td><form:label path="phone">Phone</form:label></td>
+                    <td><form:input path="phone"/></td>
+                </tr>
+                <tr>
+                    <td><form:label path="fax">Fax</form:label></td>
+                    <td><form:input path="fax"/></td>
+                </tr>
+               <tr>
+                    <td><form:label path="email">Email</form:label></td>
+                    <td><form:input path="email"/></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Submit!"/></td>
+                </tr>
+            </table>
+        </form:form>
+    
+	
+</html>
+```
 ## Revised method to handle the submission of a form (that uses the Spring tag lib) to add an agent
 ```
     // @RequestMapping(value = "/addAgent", method = RequestMethod.POST)
