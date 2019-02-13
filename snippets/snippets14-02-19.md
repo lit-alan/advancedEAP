@@ -1,4 +1,4 @@
-#To Do
+# To Do
 
 * Create a class to model an Agent from the LITRealty App.
 * Create the necessary views to:
@@ -27,8 +27,44 @@
 }
 
 ```
+## AgentDB class (AgentDB.java)
+import java.util.ArrayList;
+import java.util.List;
 
-## JSP for displaying all agents.
+public class AgentDB {
+
+    
+    static List<Agent> agentList = new ArrayList();
+    
+    static List<Agent> getAllAgents() {
+        
+        agentList.add(new Agent(1, "Sue Roberts", "999-555-111", "78-45-56-51", "Sue.Roberts@litrealty.com"));
+        agentList.add(new Agent(2, "Natasha Watkins", "999-555-112", "78-45-56-52", "Natasha.Watkins@litrealty.com"));
+        agentList.add(new Agent(3, "Chris Clarkson", "999-555-113", "78-45-56-53", "Chris.Clarkson@litrealty.com"));
+        agentList.add(new Agent(4, "Laura Blain", "999-555-114", "78-45-56-54", "Laura.Blain@litrealty.com"));
+        agentList.add(new Agent(5, "Dave Lindale", "999-555-115", "78-45-56-55", "Dave.Lindale@litrealty.com"));
+        return agentList;
+    }
+    
+    static void addAnAgent(Agent a) {
+        agentList.add(a);
+    }
+    
+    static void deleteAnAgent(int id) {
+        Agent agentToRemove = null;
+        for (Agent agent : agentList) {
+            if (agent.getId() == id) {
+                System.out.println("attempting to remove " + agent.getName());
+              agentToRemove = agent;
+            }
+        }
+        
+        agentList.remove(agentToRemove);
+    }
+}
+```
+
+## JSP for displaying all agents (allAgents.jsp).
 ```
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -41,7 +77,7 @@
     <body>
         <table style="width:100%">
             <tr>
-            <th align="left">ID</th>
+             <th align="left">ID</th>
              <th align="left">Name</th>
              <th align="left">Fax</th>
              <th align="left">Phone</th>
@@ -56,9 +92,9 @@
                     <td>${agent.phone}</td>
                     <td>${agent.email}</td>
                     <td>
-                        <a href="\AgentsCRUD\delete?id=${agent.id}">Delete</a>
-                        <a href="\AgentsCRUD\edit?id=${agent.id}">Edit</a>
-                        <a href="\AgentsCRUD\add">Insert</a>
+                        <a href="">Delete</a>
+                        <a href="">Edit</a>
+                        <a href="">Insert</a>
                     </td>
                    
                 </tr>
@@ -67,3 +103,5 @@
     </body>
 </html>
 ```
+
+## 
