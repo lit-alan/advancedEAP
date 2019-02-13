@@ -158,7 +158,8 @@ public class AgentService {
 ## Method signature for Controller method to handle submission of Add an Agent form
 
 ```
- @RequestMapping(value = "/addAgent", method = RequestMethod.POST)
+ //@RequestMapping(value = "/addAgent", method = RequestMethod.POST)
+ @PostMapping("/addAgent")
  public ModelAndView addAnAgent(@FormParam("id") int id,
                                    @FormParam("name") String name,   
                                    @FormParam("phone") String phone,  
@@ -169,8 +170,23 @@ public class AgentService {
 
 ## Method signature for Controller method to handle the deletion of an agent
 ```
-@RequestMapping(value = "/delete", method = RequestMethod.GET)
+//@RequestMapping(value = "/delete", method = RequestMethod.GET)
+@GetMapping("/delete")
 public ModelAndView deleteAnAgent(@QueryParam("id") int id) {
-
+	//delete the agent
 }
 ```    
+
+## Revised method to handle the submission of a form (that uses the Spring tag lib) to add an agent
+```
+    // @RequestMapping(value = "/addAgent", method = RequestMethod.POST)
+    @PostMapping("/addAgent")
+    public ModelAndView addAnAgent(@Valid @ModelAttribute("agent")Agent agent, 
+      BindingResult result, ModelMap model) {
+        if (result.hasErrors()) {
+                //display error page
+        }
+        //add the agent object to the list
+        //route the user to the next page
+    }
+ ```
