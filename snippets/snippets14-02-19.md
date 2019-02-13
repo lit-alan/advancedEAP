@@ -52,16 +52,15 @@ public class AgentDB {
         agentList.add(a);
     }
     
-    static void deleteAnAgent(int id) {
+    static boolean deleteAnAgent(int id) {
         Agent agentToRemove = null;
         for (Agent agent : agentList) {
             if (agent.getId() == id) {
-                System.out.println("attempting to remove " + agent.getName());
-              agentToRemove = agent;
+               agentToRemove = agent;
             }
         }
         
-        agentList.remove(agentToRemove);
+        return agentList.remove(agentToRemove);
     }
 }
 ```
@@ -151,3 +150,23 @@ public class AgentDB {
 
 </html>
 ```
+
+## Method signature for Controller method to handle submission of Add an Agent form
+
+```
+ @RequestMapping(value = "/addAgent", method = RequestMethod.POST)
+ public ModelAndView addAnAgent(@FormParam("id") int id,
+                                   @FormParam("name") String name,   
+                                   @FormParam("phone") String phone,  
+                                   @FormParam("fax") String fax,  
+                                   @FormParam("email") String email) {
+}
+```
+
+## Method signature for Controller method to handle the deletion of an agent
+```
+@RequestMapping(value = "/delete", method = RequestMethod.GET)
+public ModelAndView deleteAnAgent(@QueryParam("id") int id) {
+
+}
+```    
