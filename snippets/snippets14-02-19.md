@@ -165,6 +165,9 @@ public class AgentService {
                                    @FormParam("phone") String phone,  
                                    @FormParam("fax") String fax,  
                                    @FormParam("email") String email) {
+	//create the agent object
+	//add the object to the list
+	//route the user to the next page
 }
 ```
 
@@ -174,6 +177,7 @@ public class AgentService {
 @GetMapping("/delete")
 public ModelAndView deleteAnAgent(@QueryParam("id") int id) {
 	//delete the agent
+	//route the user to the next page
 }
 ```    
 
