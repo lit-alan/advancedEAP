@@ -57,3 +57,13 @@
 ```
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 ```
+
+## Maven Dependency for JSTL ##
+
+```
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+```
