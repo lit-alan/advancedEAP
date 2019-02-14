@@ -154,7 +154,14 @@ public class AgentService {
 
 </html>
 ```
+## Method for inclusion in the Controller to handle a get request to add an agent
 
+```
+@GetMapping("/add")
+    public ModelAndView displayAgentAddForm() {
+        return new ModelAndView("/addAgent", "agent", new Agent());
+}
+```
 ## Method signature for Controller method to handle submission of Add an Agent form
 
 ```
