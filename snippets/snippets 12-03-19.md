@@ -49,3 +49,43 @@
 </beans>
 
 ```
+## messages_en.properties
+#headers
+welcome.message= Welcome
+addagentform.header = Enter the agent details
+allagents.title = All Agents
+
+#labels for forms
+label.actions = Actions
+label.id = ID
+label.name = Name
+label.fax = Fax
+label.phone = Phone
+label.email = Email
+label.sales = Average Sale This Year
+label.datejoined = Date Joined
+label.gender = Gender
+label.gender.male = Male
+label.gender.female = Female
+
+#links and text for buttons
+label.delete = Delete
+label.insert = Insert
+label.edit = Edit
+submit.button = Submit
+
+#Error messages from Agent Bean
+typeMismatch.agent.id = the ID must be a number
+Min.agent.id = {0} must be greater than or equal to {1}
+Size.agent.name = enter at least {2} Characters 
+NotBlank.agent.fax = {0} cannot be empty
+NotBlank.agent.email = {0} cannot be empty
+Email.agent.email = enter a valid {0} address
+NotBlank.agent.phone = {0} cannot be empty
+NotBlank.agent.gender = please select a {0}
+Past.agent.dateJoined = {0} must be in the past
+NotNull.agent.dateJoined = you must select a date
+DecimalMin.agent.averageSaleThisYear =  must be greater than {2}
+```
+
+```
