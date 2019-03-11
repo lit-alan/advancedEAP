@@ -1,3 +1,4 @@
+
 ## Dispatcher Servlet Config (sd4-config.xml)
 ```
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -293,4 +294,187 @@ DecimalMin.agent.averageSaleThisYear =  le chiffre de vente moyen doit être sup
         </form:form>
     </body>
 </html>
+```
+## Agent.java
+```
+
+import java.util.Date;
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Size;
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotBlank;
+import org.springframework.format.annotation.DateTimeFormat;
+
+public class Agent {
+ 
+    @Min(value = 10)
+    private int id;
+     
+    @Size(min = 10)
+    private String name;
+    
+    @NotBlank
+    private String fax;
+
+    @NotBlank
+    private String phone;
+    
+    @NotBlank
+    @Email
+    private String email;
+    
+    @NotBlank
+    private String gender;
+    
+    @NotNull
+    @Past
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date dateJoined;
+    
+    @DecimalMin(value = "0.0")
+    private double averageSaleThisYear;
+    
+    public Agent() {
+    }
+
+    public Agent(int id, String name, String fax, String phone, String email, String gender, Date dateJoined, double averageSaleThisYear) {
+        this.id = id;
+        this.name = name;
+        this.fax = fax;
+        this.phone = phone;
+        this.email = email;
+        this.gender = gender;
+        this.dateJoined = dateJoined;
+        this.averageSaleThisYear = averageSaleThisYear;
+    }
+
+    /**
+     * @return the id
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    /**
+     * @return the name
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * @param name the name to set
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * @return the fax
+     */
+    public String getFax() {
+        return fax;
+    }
+
+    /**
+     * @param fax the fax to set
+     */
+    public void setFax(String fax) {
+        this.fax = fax;
+    }
+
+    /**
+     * @return the email
+     */
+    public String getEmail() {
+        return email;
+    }
+
+    /**
+     * @param email the email to set
+     */
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    /**
+     * @return the phone
+     */
+    public String getPhone() {
+        return phone;
+    }
+
+    /**
+     * @param phone the phone to set
+     */
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    /**
+     * @return the gender
+     */
+    public String getGender() {
+        return gender;
+    }
+
+    /**
+     * @param gender the gender to set
+     */
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    /**
+     * @return the dateJoined
+     */
+    public Date getDateJoined() {
+        return dateJoined;
+    }
+
+    /**
+     * @param dateJoined the dateJoined to set
+     */
+    public void setDateJoined(Date dateJoined) {
+        this.dateJoined = dateJoined;
+    }
+
+    /**
+     * @return the averageSaleThisYear
+     */
+    public double getAverageSaleThisYear() {
+        return averageSaleThisYear;
+    }
+
+    /**
+     * @param averageSaleThisYear the averageSaleThisYear to set
+     */
+    public void setAverageSaleThisYear(double averageSaleThisYear) {
+        this.averageSaleThisYear = averageSaleThisYear;
+    }  
+    
+    
+    @Override
+    public String toString() {
+        return "Name: " + getName() + "\t" +
+               "Email: "+ getEmail() + "\t" +
+               "Fax: " + getFax() + "\t" + 
+               "ID: " + getId() + "\t" + 
+               "Phone: " + getPhone()+ "\t" +
+               "Gender: " + getGender() + "\t" +
+               "Date Joined " + getDateJoined() + "\t" + 
+               "Total Sales "  + getAverageSaleThisYear();
+                
+    }
+}
 ```
