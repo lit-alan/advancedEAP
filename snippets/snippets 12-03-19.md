@@ -89,8 +89,9 @@ NotNull.agent.dateJoined = you must select a date
 DecimalMin.agent.averageSaleThisYear =  must be greater than {2}
 ```
 
-```
+
 ## messages_es.properties
+```
 #headers
 welcome.message= Bienvenido
 addagentform.header = Ingrese los detalles del agente
@@ -129,8 +130,9 @@ NotNull.agent.dateJoined = debes seleccionar una fecha
 DecimalMin.agent.averageSaleThisYear =  la cifra promedio de ventas debe ser mayor a {2}
 ```
 
-```
+
 ## messages_fr.properties
+```
 #headers
 welcome.message= Bienvenue
 addagentform.header = Entrez les détails de l'agent
@@ -169,8 +171,9 @@ NotNull.agent.dateJoined = vous devez choisir une date
 DecimalMin.agent.averageSaleThisYear =  le chiffre de vente moyen doit être supérieur à {2}
 ```
 
-```
+
 ## allAgents.jsp
+```
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"  %>  
