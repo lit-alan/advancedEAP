@@ -1,5 +1,5 @@
 ## Todays Snippets :+1:
-1. [Dispatcher Servlet Config](#dispatcher-servletconfig-sd4-configxml) <br>
+1. [Dispatcher Servlet Config](#dispatcher-servlet-config-sd4-configxml) <br>
 2. [English Properties File](#messages_enproperties) <br>
 3. [Spanish Properties File](#messages_esproperties) <br>
 4. [French Properties File](#messages_frproperties) <br>
