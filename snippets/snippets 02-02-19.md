@@ -1,6 +1,6 @@
 
 
-## Todays Snippets :+1:
+## Todays Snippets :smiley:
 
 ## POM.XML
 ```
