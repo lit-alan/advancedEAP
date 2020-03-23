@@ -1,7 +1,7 @@
 
 # Useful code snippets for creating a REST API with Spring :point_down:
 
-*the code listing presented below is from a paired back project thats sole purpose is to return REST representations of Agent(s). The likes of I18N, Validation etc have been removed for simplicity. The REST controller methods defined below return JSON (by default). If you wanted to return say XML, then extra annotation would have to be added to the Agent class and to the controller methods*
+*The code listing presented below is from a paired back project thats sole purpose is to return REST representations of Agent(s). The likes of I18N, Validation etc have been removed for simplicity. The REST controller methods defined below return JSON (by default). If you wanted to return say XML, then extra annotation would have to be added to the Agent class and to the controller methods.*
 
 ## 1. Add the dependencies to the POM
 ```xml
