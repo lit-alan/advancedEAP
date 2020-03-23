@@ -1,7 +1,42 @@
 
 # Useful code snippets for creating a REST API with Spring :point_down:
 
-## Add the web.xml
+*the code listing presented below is from a paired back project thats sole purpose is to return REST representations of Agent(s). The likes of I18N, Validation etc have been removed for simplicity. The REST controller methods defined below return JSON (by default). If you wanted to return say XML, then extra annotation would have to be added to the Agent class and to the controller methods*
+
+## 1. Add the dependencies to the POM
+```xml
+
+<dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>5.0.0.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-web-api</artifactId>
+            <version>7.0</version>
+            <scope>provided</scope>
+        </dependency>
+         <dependency>
+            <groupId>javax.ws.rs</groupId>
+            <artifactId>javax.ws.rs-api</artifactId>
+            <version>2.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.9.4</version>
+        </dependency> 
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.9.4</version>
+        </dependency>
+    </dependencies>
+
+```
+## 2. Add the web.xml
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 
@@ -39,7 +74,7 @@
 
 ```
 
-## Add the Spring Config File
+## 3. Add the Spring Config File
 
 ```xml
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -65,7 +100,7 @@
 </beans>
 ```
 
-## Create the Agent class
+## 4. Create the Agent class
 ```java
 public class Agent  {
  
@@ -83,7 +118,7 @@ public class Agent  {
     
 ```
 
-## Create the Service class
+## 5. Create the Service class
 ```java
 import java.util.ArrayList;
 import java.util.Date;
@@ -125,7 +160,7 @@ public class AgentService {
 
 ```
 
-## Create the Rest Controller
+## 6. Create the Rest Controller
 ```java
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -159,7 +194,7 @@ public class AgentRestController {
     INSERTS's @PostMapping
     UPDATES's @PutMapping
     
-    The will have to be tested through a 3rd Party App like Postman (https://www.postman.com/downloads/)
+    They will have to be tested through a 3rd Party App like Postman (https://www.postman.com/downloads/)
     
     
     See the notes for examples of not only using these mappings but also testing them with Postman
