@@ -74,7 +74,7 @@
 
 ```
 
-## 3. Add the Spring Config File
+## 3. Add the Spring Config File (sd4-config.xml)
 
 ```xml
 <beans xmlns="http://www.springframework.org/schema/beans"
