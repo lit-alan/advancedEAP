@@ -1,7 +1,7 @@
 
 # Useful code snippets for creating a REST API with Spring :point_down:
 
-*The code listing presented below is from a paired back project thats sole purpose is to return REST representations of Agent(s). The likes of I18N, Validation etc have been removed for simplicity. The REST controller methods defined below return JSON (by default). If you wanted to return say XML, then extra annotation would have to be added to the Agent class and to the controller methods.*
+*The code listing presented below is from a paired back project thats sole purpose is to return REST representations of Agent(s). The likes of I18N, Validation etc have been removed for simplicity. The REST controller methods defined below return JSON (by default  - JSON is preferable to XML). If you wanted to return say XML, then extra annotation would have to be added to the Agent class and to the controller methods.*
 
 ## 1. Add the dependencies to the POM
 ```xml
@@ -163,6 +163,8 @@ public class AgentService {
 ## 6. Create the Rest Controller
 ```java
 import java.util.List;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -176,16 +178,37 @@ public class AgentRestController {
     
     @Autowired
     AgentService service;
-    
+
     @GetMapping
+    @Produces(MediaType.APPLICATION_JSON) //optional to specify that this method produces JSON as its returned by default
     public List<Agent> getAgents() {
         return service.getAllAgents(); //the list is returned in JSON format by default. Each browser will handle this differently (e.g. IE will let you download a file containing the objects in JSON format)
     }
    
+   
     @GetMapping("/{id}")
+    @Produces(MediaType.APPLICATION_JSON) //see previous comment
     public Agent getAgent(@PathVariable("id") int id) {
-        return service.find(id); //again the object is returned in JSON format by default. Each browser will handle this differently.
+        return service.find(id);
+     }
+    
+    /*
+    What if you wanted to return a HTML representation of an agents contact details?
+    @GetMapping("/{id}")
+    @Produces(MediaType.TEXT_HTML) //see how the media type changes for HTML
+    public String getAgentContactDetails(@PathVariable("id") int id) {
+        Agent a =  service.find(id);
+        String output = "<html><body><h3>Contact Details for Agent: </body> " + id +  "</h3>" +
+                        "<br><b>Name: </b>" + a.getName() +
+                        "<br><b>Phone: </b>" + a.getPhone() +
+                        "<br><b>Email: </b>" + a.getEmail()+ 
+                        "<br><b>Fax: </b>" + a.getFax() +
+                        "<br></body></html>";
+        return output;
+        
     }
+    */
+    
     
     /*
     
@@ -194,10 +217,11 @@ public class AgentRestController {
     INSERTS's @PostMapping
     UPDATES's @PutMapping
     
-    They will have to be tested through a 3rd Party App like Postman (https://www.postman.com/downloads/)
+    The will have to be tested through a 3rd Party App like Postman (https://www.postman.com/downloads/)
     
     
-    See the notes for examples of not only using these mappings but also testing them with Postman
+    See the notes for examples of not only using these mappings but testing them with Postman
+    
     */
 }
 ```
