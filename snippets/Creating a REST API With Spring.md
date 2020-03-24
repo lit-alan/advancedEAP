@@ -84,7 +84,8 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
     http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
     http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
-    <context:component-scan base-package="lit.sd4.controllers" />
+    <context:component-scan base-package="lit.sd4.controllers, lit.sd4.model, lit.sd4.DAO" />
+
 
 
     <mvc:annotation-driven />
@@ -102,6 +103,10 @@
 
 ## 4. Create the Agent class
 ```java
+package lit.sd4.model;
+
+import java.util.Date;
+
 public class Agent  {
  
   
@@ -120,10 +125,13 @@ public class Agent  {
 
 ## 5. Create the Service class
 ```java
+package lit.sd4.DAO;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
+import lit.sd4.model.Agent;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -162,9 +170,14 @@ public class AgentService {
 
 ## 6. Create the Rest Controller
 ```java
+package lit.sd4.controllers;
+
+
 import java.util.List;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import lit.sd4.model.Agent;
+import lit.sd4.DAO.AgentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
