@@ -175,7 +175,7 @@ package lit.sd4.controllers;
 
 import java.util.List;
 import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
+import org.springframework.http.MediaType;
 import lit.sd4.model.Agent;
 import lit.sd4.DAO.AgentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -192,23 +192,21 @@ public class AgentRestController {
     @Autowired
     AgentService service;
 
-    @GetMapping
-    @Produces(MediaType.APPLICATION_JSON) //optional to specify that this method produces JSON as its returned by default
+   @GetMapping
+    @Produces(MediaType.APPLICATION_JSON_VALUE) //optional to specify that this method produces JSON as its returned by default
     public List<Agent> getAgents() {
         return service.getAllAgents(); //the list is returned in JSON format by default. Each browser will handle this differently (e.g. IE will let you download a file containing the objects in JSON format)
     }
    
-   
     @GetMapping("/{id}")
-    @Produces(MediaType.APPLICATION_JSON) //see previous comment
+    @Produces(MediaType.APPLICATION_JSON_VALUE) //see previous comment
     public Agent getAgent(@PathVariable("id") int id) {
         return service.find(id);
      }
     
     /*
     What if you wanted to return a HTML representation of an agents contact details?
-    @GetMapping("/{id}")
-    @Produces(MediaType.TEXT_HTML) //see how the media type changes for HTML
+   @GetMapping(value = "/{id}", produces = MediaType.TEXT_HTML_VALUE) //see how the media type changes for HTML. See also how you can combine the @GetMapping and @Produces annotation into 1 line
     public String getAgentContactDetails(@PathVariable("id") int id) {
         Agent a =  service.find(id);
         String output = "<html><body><h3>Contact Details for Agent: </body> " + id +  "</h3>" +
