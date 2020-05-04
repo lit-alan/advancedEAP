@@ -5,6 +5,7 @@
 4. [addProduct.jsp](#addproductjsp) <br>
 5. [POM.XML](#pomxml) <br>
 6. [WEB.XML](#webxml)
+7. [SpringConfig](#config)
 
 
 ## Product.java
@@ -168,7 +169,7 @@ public class ProductService {
 ```
 
 
-## allProducts.JSP
+## allProducts.jsp
 ```jsp
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
@@ -351,6 +352,33 @@ These are the versions of SpringMVC and Spring Security that you are required to
  
  
 </web-app>
+
+```
+
+
+## SpringConfig
+```xml
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+    http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+    <context:component-scan base-package="lit.sd4.controllers" />
+
+    <mvc:annotation-driven />
+    <bean
+        class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix">
+            <value>/views</value>
+        </property>
+        <property name="suffix">
+            <value>.jsp</value>
+        </property>
+    </bean>   
+</beans>
 
 
 
