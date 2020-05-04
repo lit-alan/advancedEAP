@@ -1,11 +1,11 @@
 ## Todays Snippets :point_down:
 1. [Product.java](#productjava) <br>
 2. [ProductService.java](#productservicejava) <br>
-3. [allProducts.jsp](#allProductsjsp) <br>
+3. [allProducts.jsp](#allproductsjsp) <br>
 4. [addProduct.jsp](#addproductjsp) <br>
 5. [POM.XML](#pomxml) <br>
 6. [WEB.XML](#webxml)
-7. [SpringConfig](#config)
+7. [SpringConfig](#springconfig)
 
 
 ## Product.java
