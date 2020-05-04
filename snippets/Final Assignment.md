@@ -4,6 +4,7 @@
 3. [allProducts.jsp](#allProductsjsp) <br>
 4. [addProduct.jsp](#addproductjsp) <br>
 5. [POM.XML](#pomxml) <br>
+6. [WEB.XML](#webxml)
 
 
 ## Product.java
@@ -304,6 +305,53 @@ These are the versions of SpringMVC and Spring Security that you are required to
     <artifactId>spring-security-taglibs</artifactId>  
     <version>4.0.3.RELEASE</version>  
 </dependency>  
+```
+
+
+## WEB.XML
+```xml
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0">
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    
+    <servlet>
+        <servlet-name>dispatcher</servlet-name>
+        <servlet-class>
+            org.springframework.web.servlet.DispatcherServlet
+        </servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>/WEB-INF/sd4-config.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>dispatcher</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+    
+    <filter>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+    </filter>
+	 
+    <filter-mapping>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping> 
+ 
+ 
+</web-app>
+
 
 
 ```
