@@ -2,13 +2,11 @@
 ## Snippets for 'Introduction To Spring' Live Coding Session: :point_down:
 
 
-
-
-1. [Plugin Repositories](#boozyjoessql) 
+1. [Plugin Repositories](#pluginrepositories)
 
 2. [CMD to Run Spring](#cmdtorunspring)
 
-3. [Maven Dependencies](#mavendependenciesfortomcatandjstl) 
+3. [Maven Dependencies For Tomcat And JSTL](#mavendependenciesfortomcatandjstl) 
 
 4. [Configure Views](#configureviews)
 
@@ -16,7 +14,7 @@
 
 6. [Greetings.jsp](#greetingsjsp)
 
-### Plugin Repo
+### Plugin Repositories
 ```xml
 <pluginRepositories>
   <pluginRepository>
@@ -36,7 +34,7 @@
 
 ```
 
-### CMD to run Spring
+### CMD to Run Spring
 > spring-boot:run
 
 
