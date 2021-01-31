@@ -3,17 +3,17 @@
           
           
 1. Create a project using [Spring Initializr](https://start.spring.io/) using the settings I have recommended.  
-![settings to use when creating your Spring Boot project](todo/images/spring_init.JPG)
+![settings to use when creating your Spring Boot project](images/spring_init.JPG)
    * Add dependencies for Spring Web along with **Spring Data and H2** to the project using the Initlializr. 
    * Don't forget to add an [entry](https://github.com/lit-alan/SD4-Adv-Enterprise-App-Development/blob/master/snippets/intro_to_spring.md#plugin-repositories) to your POM to instruct Maven to use *https* when downloading the necessary plugins.
 
 2. Create an entity class to model a [Book](#bookjava)
 
 3. Create a repository interface, that extends [CrudRepository](https://docs.spring.io/spring-data/commons/docs/current/api/org/springframework/data/repository/CrudRepository.html), as well as an associated service class for your Book entity. See my [source code on Github](https://github.com/lit-alan/SD4-Adv-Enterprise-App-Development/tree/master/source/SpringBootAndTheCrudRepository) (and the image below) for help with structuring your project and also the course notes on [Moodle](https://moodle.lit.ie/course/view.php?id=1766). 
-![settings to use when creating your Spring Boot project](todo/images/project_structure.JPG)
+![settings to use when creating your Spring Boot project](images/project_structure.JPG)
     * Don't forget to add the [necesary config](https://github.com/lit-alan/SD4-Adv-Enterprise-App-Development/blob/master/source/SpringBootAndTheCrudRepository/src/main/resources/application.properties) to the *application.properties* file for H2.
 
-4. In your Spring Boot [Application class](source/SpringBootAndTheCrudRepository/src/main/java/com/sd4/application/SpringBootAndTheCrudRepositoryApplication.java), add the necessary package scans and add some Books objects to H2. Don't forget to implement the *CommandLineRunner* interface 
+4. In your Spring Boot [Application class](https://github.com/lit-alan/SD4-Adv-Enterprise-App-Development/blob/master/source/SpringBootAndTheCrudRepository/src/main/java/com/sd4/application/SpringBootAndTheCrudRepositoryApplication.java), add the necessary package scans and add some Books objects to H2. Don't forget to implement the *CommandLineRunner* interface 
 
 5. Build a CRUD application for the Book entity (this will necessitate you adding a Controller(s) to your project).
    * The "add a Book" feature **must be implemented in an MVC fashion** using  a [form](#addbookjsp) to gather the data to be inserted in the DB. Use the [following code](#addbook-controller-methods) in your MVC controller to assist with this.
