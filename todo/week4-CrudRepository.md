@@ -16,7 +16,9 @@
 
 4. In your Spring Boot [Application class](https://github.com/lit-alan/SD4-Adv-Enterprise-App-Development/blob/master/source/SpringBootAndTheCrudRepository/src/main/java/com/sd4/application/SpringBootAndTheCrudRepositoryApplication.java), add the necessary package scans and add some Books objects to H2. Don't forget to implement the *CommandLineRunner* interface 
 
-5. Build a CRUD application for the Book entity (this will necessitate you adding a Controller(s) to your project).
+5. You can run the application at this point and you should be able to view the data in the DB via the H2 Console.
+
+6. Build a CRUD application for the Book entity (this will necessitate you adding a Controller(s) to your project).
    * The "add a Book" feature **must be implemented in an MVC fashion** using  a [form](#addbookjsp) to gather the data to be inserted in the DB. Use the [following code](#addbook-controller-methods) in your MVC controller to assist with this.
    * You will have to add a dependency for [Jasper and JSTL](https://github.com/lit-alan/SD4-Adv-Enterprise-App-Development/blob/master/snippets/intro_to_spring.md#maven-dependencies-for-tomcat-and-jstl) to your POM at this stage.
    * You will have to create a folder to store your view(s) and you will have to put the associated [hooks](https://github.com/lit-alan/SD4-Adv-Enterprise-App-Development/blob/master/snippets/intro_to_spring.md#configure-views) into the *application.properties* file at this point.
@@ -187,7 +189,7 @@ public ModelAndView displayAddForm() {
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"  %>  
-<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+
 
 <html>
     <head>
