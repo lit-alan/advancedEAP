@@ -3,8 +3,9 @@
           
           
 1. Create a project using [Spring Initializr](https://start.spring.io/) using the settings I have recommended.  
-![settings to use when creating your Spring Boot project](/images/spring_init.JPG)
    * Add dependencies for Spring Web along with **Spring Data and H2** to the project using the Initlializr. 
+![settings to use when creating your Spring Boot project](/images/spring_init.JPG)
+   
    * Don't forget to add an [entry](https://github.com/lit-alan/SD4-Adv-Enterprise-App-Development/blob/master/snippets/intro_to_spring.md#plugin-repositories) to your POM to instruct Maven to use *https* when downloading the necessary plugins.
 
 2. Create an entity class to model a [Book](#bookjava)
