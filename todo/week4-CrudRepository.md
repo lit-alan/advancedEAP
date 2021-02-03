@@ -170,7 +170,7 @@ public class Book {
  @GetMapping("/add")
 public ModelAndView displayAddForm() {
         return new ModelAndView("/addBook", "aBook", new Book());
-}.
+}
 
 //method to save the book entity to the DB    
 //decide on mapping etc..
