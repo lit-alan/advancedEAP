@@ -174,7 +174,7 @@ public ModelAndView displayAddForm() {
 
 //method to save the book entity to the DB    
 //decide on mapping etc..
- public ModelAndView addAnAgent(@ModelAttribute("aBook") Book b, BindingResult result) {
+ public ModelAndView addABook(@ModelAttribute("aBook") Book b, BindingResult result) {
                 
         if (result.hasErrors()) {
             //display error page
